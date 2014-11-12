@@ -37,7 +37,7 @@ public class DebugWindowStyles_default_InlineClientBundleGenerator implements co
     return cssInitializer.get();
   }
   private void iconFontEotInitializer() {
-    iconFontEot = // jar:file:/C:/Users/Crabar/.m2/repository/com/vaadin/vaadin-client/7.3.3/vaadin-client-7.3.3.jar!/com/vaadin/client/debug/internal/theme/font.eot
+    iconFontEot = // jar:file:/C:/Users/ypoliakov/.m2/repository/com/vaadin/vaadin-client/7.3.3/vaadin-client-7.3.3.jar!/com/vaadin/client/debug/internal/theme/font.eot
     new com.google.gwt.resources.client.impl.DataResourcePrototype(
       "iconFontEot",
       com.google.gwt.safehtml.shared.UriUtils.fromTrustedString(GWT.getModuleBaseForStaticFiles() + "F3F1A7FA8472175971DF1043932FB084.cache.eot")
@@ -55,7 +55,7 @@ public class DebugWindowStyles_default_InlineClientBundleGenerator implements co
     return iconFontEotInitializer.get();
   }
   private void iconFontSvgInitializer() {
-    iconFontSvg = // jar:file:/C:/Users/Crabar/.m2/repository/com/vaadin/vaadin-client/7.3.3/vaadin-client-7.3.3.jar!/com/vaadin/client/debug/internal/theme/font.svg
+    iconFontSvg = // jar:file:/C:/Users/ypoliakov/.m2/repository/com/vaadin/vaadin-client/7.3.3/vaadin-client-7.3.3.jar!/com/vaadin/client/debug/internal/theme/font.svg
     new com.google.gwt.resources.client.impl.DataResourcePrototype(
       "iconFontSvg",
       com.google.gwt.safehtml.shared.UriUtils.fromTrustedString(GWT.getModuleBaseForStaticFiles() + "8E2729D57B50E284D9ABC2E3BA20C0CF.cache.svg")
@@ -73,7 +73,7 @@ public class DebugWindowStyles_default_InlineClientBundleGenerator implements co
     return iconFontSvgInitializer.get();
   }
   private void iconFontTtfInitializer() {
-    iconFontTtf = // jar:file:/C:/Users/Crabar/.m2/repository/com/vaadin/vaadin-client/7.3.3/vaadin-client-7.3.3.jar!/com/vaadin/client/debug/internal/theme/font.ttf
+    iconFontTtf = // jar:file:/C:/Users/ypoliakov/.m2/repository/com/vaadin/vaadin-client/7.3.3/vaadin-client-7.3.3.jar!/com/vaadin/client/debug/internal/theme/font.ttf
     new com.google.gwt.resources.client.impl.DataResourcePrototype(
       "iconFontTtf",
       com.google.gwt.safehtml.shared.UriUtils.fromTrustedString(GWT.getModuleBaseForStaticFiles() + "DD4D51A649350B8AD2D768C997300EC2.cache.ttf")
@@ -91,7 +91,7 @@ public class DebugWindowStyles_default_InlineClientBundleGenerator implements co
     return iconFontTtfInitializer.get();
   }
   private void iconFontWoffInitializer() {
-    iconFontWoff = // jar:file:/C:/Users/Crabar/.m2/repository/com/vaadin/vaadin-client/7.3.3/vaadin-client-7.3.3.jar!/com/vaadin/client/debug/internal/theme/font.woff
+    iconFontWoff = // jar:file:/C:/Users/ypoliakov/.m2/repository/com/vaadin/vaadin-client/7.3.3/vaadin-client-7.3.3.jar!/com/vaadin/client/debug/internal/theme/font.woff
     new com.google.gwt.resources.client.impl.DataResourcePrototype(
       "iconFontWoff",
       com.google.gwt.safehtml.shared.UriUtils.fromTrustedString(GWT.getModuleBaseForStaticFiles() + "195F8487DC6B49CA7A15821F75AFA461.cache.woff")

@@ -3,10 +3,11 @@ package org.crabar.components.gwtmycanvas.client;
 import com.google.gwt.canvas.client.Canvas;
 import com.google.gwt.event.dom.client.MouseMoveEvent;
 import com.google.gwt.event.dom.client.MouseMoveHandler;
+import com.google.gwt.event.logical.shared.ResizeEvent;
+import com.google.gwt.event.logical.shared.ResizeHandler;
 import com.google.gwt.user.client.Timer;
-import com.google.gwt.user.client.ui.*;
-
-import java.util.Iterator;
+import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.Composite;
 
 /**
  * Created by Crabar on 08.11.2014.
@@ -14,46 +15,64 @@ import java.util.Iterator;
 public class GWTMyCanvasWidget extends Composite {
 
     public static final String CLASSNAME = "mycomponent";
+    private static final int FRAMERATE = 30;
+    private Canvas canvas;
+    private Platform platform;
+    private int textX;
 
     public GWTMyCanvasWidget() {
-        VerticalPanel panel = new VerticalPanel();
-        panel.setWidth("100%");
-        panel.setHeight("100%");
-        _canvas = Canvas.createIfSupported();
-        _canvas.setWidth("100%");
-        _canvas.setHeight("100%");
-        panel.add(_canvas);
-        _canvas.addMouseMoveHandler(new MouseMoveHandler() {
+        canvas = Canvas.createIfSupported();
+        canvas.addMouseMoveHandler(new MouseMoveHandler() {
             @Override
             public void onMouseMove(MouseMoveEvent event) {
-                textX = event.getX();
+                if (platform != null) {
+                    platform.setCenterX(event.getX());
+                }
             }
         });
-        initWidget(panel);
+        initWidget(canvas);
+        Window.addResizeHandler(new ResizeHandler() {
+            @Override
+            public void onResize(ResizeEvent resizeEvent) {
+                resizeCanvas(resizeEvent.getWidth(), resizeEvent.getHeight());
+            }
+        });
         initGameTimer();
+        resizeCanvas(Window.getClientWidth(), Window.getClientHeight());
         setStyleName(CLASSNAME);
-
+        platform = createPlatform();
     }
 
-    private Canvas _canvas;
+    private void resizeCanvas(int width, int height) {
+        canvas.setWidth(width + "px");
+        canvas.setCoordinateSpaceWidth(width);
+        canvas.setHeight(height + "px");
+        canvas.setCoordinateSpaceHeight(height);
+    }
 
     private void initGameTimer() {
         Timer timer = new Timer() {
             @Override
             public void run() {
-//                textX += 1;
                 drawCanvas();
             }
         };
 
-        timer.scheduleRepeating(50);
+        timer.scheduleRepeating(1000 / FRAMERATE);
     }
-
-    private int textX;
 
     private void drawCanvas() {
-        _canvas.getContext2d().clearRect(0, 0, 2000, 300);
-        _canvas.getContext2d().fillRect(textX, 100, 100, 100);
+        canvas.getContext2d().clearRect(0, 0, canvas.getCoordinateSpaceWidth(), canvas.getCoordinateSpaceHeight());
+        drawPlatform();
     }
 
+    private Platform createPlatform() {
+        Platform platform = new Platform();
+        platform.setY(Window.getClientHeight());
+        return platform;
+    }
+
+    private void drawPlatform() {
+        canvas.getContext2d().fillRect(platform.getCenterX() - platform.getWidth() / 2, platform.getY() - 100, platform.getWidth(), platform.getHeight());
+    }
 }
