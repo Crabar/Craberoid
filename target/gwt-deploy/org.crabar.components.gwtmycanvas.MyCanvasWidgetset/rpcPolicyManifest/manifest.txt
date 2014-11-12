@@ -1,2 +1,0 @@
-# Module org.crabar.components.gwtmycanvas.MyCanvasWidgetset
-# RPC service class, partial path of RPC policy file
