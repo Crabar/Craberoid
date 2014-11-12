@@ -11,5 +11,4 @@ public class MyCanvas extends AbstractComponent {
     public MyCanvasState getState() {
         return (MyCanvasState) super.getState();
     }
-
 }

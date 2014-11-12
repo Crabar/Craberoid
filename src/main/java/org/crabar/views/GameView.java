@@ -19,49 +19,16 @@ public class GameView extends VerticalLayout implements View {
         setSizeFull();
         setStyleName("game-view");
         createCanvas();
-
-    }
-
-    private void initGameTimer() {
-//        _timer = new Timer() {
-//            @Override
-//            public void run() {
-//                textX += 1;
-//                drawCanvas();
-//            }
-//        };
-//
-//        _timer.scheduleRepeating(1000);
     }
 
     private void createCanvas() {
-//        _canvas = new Canvas();
-//        addComponent(_canvas);
-        //
-        MyCanvas test = new MyCanvas();
-        addComponent(test);
-    }
-
-    private int textX;
-
-    private void drawCanvas() {
-        _canvas.saveContext();
-        _canvas.clear();
-        _canvas.fillRect(textX, 40, 100, 100);
-        _canvas.restoreContext();
-    }
-
-    private Canvas _canvas;
-//    private Timer _timer;
-
-    private void createCrab() {
-
+        MyCanvas canvas = new MyCanvas();
+        addComponent(canvas);
+        canvas.setSizeFull();
     }
 
     @Override
     public void enter(ViewChangeListener.ViewChangeEvent event) {
-//        _canvas.setWidth(getWidth(), Unit.PERCENTAGE);
-//        _canvas.setHeight(getHeight(), Unit.PERCENTAGE);
-//        initGameTimer();
+
     }
 }
