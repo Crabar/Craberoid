@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="craberoid:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="craberoid-2.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="craberoid:war exploded" />
-    </root>
-  </artifact>
-</component>
