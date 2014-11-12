@@ -32,6 +32,7 @@
 
     <inherits name="org.vaadin.hezamu.canvas.CanvasWidgetset" />
     <inherits name="org.crabar.components.gwtmycanvas.MyCanvasWidgetset" />
+    <inherits name="com.google.gwt.logging.Logging"/>
+    <inherits name="com.google.gwt.resources.Resources" />
 
-    
 </module>
