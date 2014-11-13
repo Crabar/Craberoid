@@ -8,22 +8,29 @@ import org.crabar.components.gwtmycanvas.client.resources.CraberoidClientBundle;
 /**
  * Created by ypoliakov on 12.11.2014.
  */
-public class Ball implements IDrawable {
+public class Ball implements IDynamicObject {
+
+    ImageElement ballImage;
+    int centerX;
+    int centerY;
+    int radius = 25;
+    double velocity[] = {0, 0}; // px per sec
+    private double velocityFactor;
+    private int gameFrameRate = 1;
 
     public Ball() {
         final Image img = new Image(CraberoidClientBundle.INSTANCE.ball());
         ballImage = ImageElement.as(img.getElement());
-//        img.addLoadHandler(new LoadHandler() {
-//            @Override
-//            public void onLoad(LoadEvent loadEvent) {
-//
-//            }
-//        });
-
-
     }
 
-    ImageElement ballImage;
+    public int getGameFrameRate() {
+        return gameFrameRate;
+    }
+
+    public void setGameFrameRate(int gameFrameRate) {
+        this.gameFrameRate = gameFrameRate;
+        this.velocityFactor = 1000 / getGameFrameRate();
+    }
 
     public int getCenterX() {
         return centerX;
@@ -41,19 +48,24 @@ public class Ball implements IDrawable {
         this.centerY = centerY;
     }
 
-    int centerX;
-    int centerY;
-
     public int getRadius() {
         return radius;
     }
 
-    int radius = 25;
-
     @Override
     public void draw(Context2d context2d) {
-//        logger.log(Level.SEVERE, String.valueOf(getCenterX() - getRadius()));
-//        context2d.fillRect(getCenterX() - getRadius(), getCenterY() - getRadius(), getRadius() * 2, getRadius() * 2);
         context2d.drawImage(ballImage, (double) (getCenterX() - getRadius()), (double) (getCenterY() - getRadius()), (double) (getRadius() * 2), (double) (getRadius() * 2));
     }
+
+    @Override
+    public void update() {
+        centerX += Math.round(velocity[0] / velocityFactor);
+        centerY += Math.round(velocity[1] / velocityFactor);
+    }
+
+    public void setVelocity(int horizontalVelocity, int verticalVelocity) {
+        velocity[0] = horizontalVelocity;
+        velocity[1] = verticalVelocity;
+    }
+
 }

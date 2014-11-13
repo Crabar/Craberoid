@@ -1,15 +1,17 @@
 package org.crabar.components.gwtmycanvas.client;
 
 import com.google.gwt.canvas.client.Canvas;
-import com.google.gwt.event.dom.client.MouseMoveEvent;
-import com.google.gwt.event.dom.client.MouseMoveHandler;
+import com.google.gwt.event.dom.client.*;
 import com.google.gwt.event.logical.shared.ResizeEvent;
 import com.google.gwt.event.logical.shared.ResizeHandler;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import org.crabar.components.gwtmycanvas.client.gameObjects.Ball;
+import org.crabar.components.gwtmycanvas.client.gameObjects.IDynamicObject;
 import org.crabar.components.gwtmycanvas.client.gameObjects.Platform;
+
+import java.util.ArrayList;
 
 /**
  * Created by Crabar on 08.11.2014.
@@ -17,13 +19,28 @@ import org.crabar.components.gwtmycanvas.client.gameObjects.Platform;
 public class GWTMyCanvasWidget extends Composite {
 
     public static final String CLASSNAME = "mycomponent";
-    private static final int FRAMERATE = 30;
+    private static final int FRAME_RATE = 30;
     private Canvas canvas;
     private Platform platform;
     private Ball ball;
+    private ArrayList<IDynamicObject> gameObjects;
 
     public GWTMyCanvasWidget() {
         canvas = Canvas.createIfSupported();
+        initHandlers();
+        initWidget(canvas);
+        initGameTimer();
+        resizeCanvas(Window.getClientWidth(), Window.getClientHeight());
+        setStyleName(CLASSNAME);
+        gameObjects = new ArrayList<IDynamicObject>();
+        platform = createPlatform();
+        ball = createBall();
+        ball.setGameFrameRate(FRAME_RATE);
+        gameObjects.add(platform);
+        gameObjects.add(ball);
+    }
+
+    private void initHandlers() {
         canvas.addMouseMoveHandler(new MouseMoveHandler() {
             @Override
             public void onMouseMove(MouseMoveEvent event) {
@@ -32,19 +49,22 @@ public class GWTMyCanvasWidget extends Composite {
                 }
             }
         });
-        initWidget(canvas);
         Window.addResizeHandler(new ResizeHandler() {
             @Override
             public void onResize(ResizeEvent resizeEvent) {
                 resizeCanvas(resizeEvent.getWidth(), resizeEvent.getHeight());
             }
         });
-        initGameTimer();
-        resizeCanvas(Window.getClientWidth(), Window.getClientHeight());
-        setStyleName(CLASSNAME);
-        platform = createPlatform();
-        ball = createBall();
+        canvas.addKeyDownHandler(new KeyDownHandler() {
+            @Override
+            public void onKeyDown(KeyDownEvent keyDownEvent) {
+                if (keyDownEvent.getNativeKeyCode() == KeyCodes.KEY_SPACE) {
+                    ball.setVelocity(200, 200);
+                }
+            }
+        });
     }
+
 
     private Ball createBall() {
         Ball ball = new Ball();
@@ -68,15 +88,15 @@ public class GWTMyCanvasWidget extends Composite {
             }
         };
 
-        timer.scheduleRepeating(1000 / FRAMERATE);
+        timer.scheduleRepeating(1000 / FRAME_RATE);
     }
 
     private void drawCanvas() {
         canvas.getContext2d().clearRect(0, 0, canvas.getCoordinateSpaceWidth(), canvas.getCoordinateSpaceHeight());
-        if (platform != null)
-            platform.draw(canvas.getContext2d());
-        if (ball != null)
-            ball.draw(canvas.getContext2d());
+        for (IDynamicObject gameObject : gameObjects) {
+            gameObject.update();
+            gameObject.draw(canvas.getContext2d());
+        }
     }
 
     private Platform createPlatform() {

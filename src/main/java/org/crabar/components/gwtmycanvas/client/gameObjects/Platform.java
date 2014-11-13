@@ -5,7 +5,7 @@ import com.google.gwt.canvas.dom.client.Context2d;
 /**
  * Created by ypoliakov on 11.11.2014.
  */
-public class Platform implements IDrawable {
+public class Platform implements IDynamicObject {
     public void setCenterX(int centerX) {
         this.centerX = centerX;
     }
@@ -40,5 +40,10 @@ public class Platform implements IDrawable {
     @Override
     public void draw(Context2d context2d) {
         context2d.fillRect(getCenterX() - getWidth() / 2, getY(), getWidth(), getHeight());
+    }
+
+    @Override
+    public void update() {
+
     }
 }
