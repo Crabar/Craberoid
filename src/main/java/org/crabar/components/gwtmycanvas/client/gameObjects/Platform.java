@@ -2,48 +2,35 @@ package org.crabar.components.gwtmycanvas.client.gameObjects;
 
 import com.google.gwt.canvas.dom.client.Context2d;
 
+
 /**
  * Created by ypoliakov on 11.11.2014.
  */
-public class Platform implements IDynamicObject {
+public class Platform extends Rectangle implements IDynamicObject {
+
+    public Platform() {
+        setWidth(80);
+        setHeight(20);
+    }
+
     public void setCenterX(int centerX) {
         this.centerX = centerX;
+        setX(centerX - getWidth() / 2);
     }
 
     private int centerX;
-    private int height = 20;
-
-    public int getWidth() {
-        return width;
-    }
-
-    private int width = 80;
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    private int y;
 
     public int getCenterX() {
         return centerX;
     }
 
-    public int getHeight() {
-        return height;
-    }
-
     @Override
     public void draw(Context2d context2d) {
-        context2d.fillRect(getCenterX() - getWidth() / 2, getY(), getWidth(), getHeight());
+        context2d.fillRect(getX(), getY(), getWidth(), getHeight());
     }
 
     @Override
-    public void update() {
+    public void update(double elapsedTime) {
 
     }
 }

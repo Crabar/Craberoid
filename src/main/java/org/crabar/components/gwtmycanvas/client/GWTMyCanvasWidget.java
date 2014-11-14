@@ -1,6 +1,8 @@
 package org.crabar.components.gwtmycanvas.client;
 
+import com.google.gwt.animation.client.AnimationScheduler;
 import com.google.gwt.canvas.client.Canvas;
+import com.google.gwt.canvas.dom.client.Context2d;
 import com.google.gwt.event.dom.client.*;
 import com.google.gwt.event.logical.shared.ResizeEvent;
 import com.google.gwt.event.logical.shared.ResizeHandler;
@@ -21,21 +23,23 @@ public class GWTMyCanvasWidget extends Composite {
     public static final String CLASSNAME = "mycomponent";
     private static final int FRAME_RATE = 30;
     private Canvas canvas;
+    private Canvas backBufferCanvas;
     private Platform platform;
     private Ball ball;
     private ArrayList<IDynamicObject> gameObjects;
 
     public GWTMyCanvasWidget() {
         canvas = Canvas.createIfSupported();
+        backBufferCanvas = Canvas.createIfSupported();
         initHandlers();
         initWidget(canvas);
         initGameTimer();
-        resizeCanvas(Window.getClientWidth(), Window.getClientHeight());
+        resizeCanvas(canvas, Window.getClientWidth(), Window.getClientHeight());
+        resizeCanvas(backBufferCanvas, Window.getClientWidth(), Window.getClientHeight());
         setStyleName(CLASSNAME);
         gameObjects = new ArrayList<IDynamicObject>();
         platform = createPlatform();
         ball = createBall();
-        ball.setGameFrameRate(FRAME_RATE);
         gameObjects.add(platform);
         gameObjects.add(ball);
     }
@@ -52,7 +56,8 @@ public class GWTMyCanvasWidget extends Composite {
         Window.addResizeHandler(new ResizeHandler() {
             @Override
             public void onResize(ResizeEvent resizeEvent) {
-                resizeCanvas(resizeEvent.getWidth(), resizeEvent.getHeight());
+                resizeCanvas(canvas, resizeEvent.getWidth(), resizeEvent.getHeight());
+                resizeCanvas(backBufferCanvas, resizeEvent.getWidth(), resizeEvent.getHeight());
             }
         });
         canvas.addKeyDownHandler(new KeyDownHandler() {
@@ -73,30 +78,48 @@ public class GWTMyCanvasWidget extends Composite {
         return ball;
     }
 
-    private void resizeCanvas(int width, int height) {
+    private void resizeCanvas(Canvas canvas, int width, int height) {
         canvas.setWidth(width + "px");
         canvas.setCoordinateSpaceWidth(width);
         canvas.setHeight(height + "px");
         canvas.setCoordinateSpaceHeight(height);
     }
 
-    private void initGameTimer() {
-        Timer timer = new Timer() {
-            @Override
-            public void run() {
-                drawCanvas();
-            }
-        };
+    private double elapsedTime = 0;
+    private double previousFrameTimestamp = 0;
 
-        timer.scheduleRepeating(1000 / FRAME_RATE);
+    private void initGameTimer() {
+        AnimationScheduler.get().requestAnimationFrame(new AnimationScheduler.AnimationCallback() {
+            @Override
+            public void execute(double timestamp) {
+                double elapsedTime = timestamp - previousFrameTimestamp;
+                drawCanvas(elapsedTime);
+                drawFPS(canvas.getContext2d(), elapsedTime);
+                previousFrameTimestamp = timestamp;
+                AnimationScheduler.get().requestAnimationFrame(this);
+            }
+        });
     }
 
-    private void drawCanvas() {
+    private void drawBuffer(Context2d bufferContext) {
+        canvas.getContext2d().drawImage(bufferContext.getCanvas(), 0, 0);
+    }
+
+    private void drawFPS(Context2d canvas, double elapsedTime) {
+        canvas.setFont("20pt serif");
+        canvas.fillText("FPS: " + String.valueOf(Math.round(1000 / elapsedTime)), 50, 50);
+    }
+
+    private void drawCanvas(double elapsedTime) {
+//        backBufferCanvas.getContext2d().clearRect(0, 0, backBufferCanvas.getCoordinateSpaceWidth(), backBufferCanvas.getCoordinateSpaceHeight());
         canvas.getContext2d().clearRect(0, 0, canvas.getCoordinateSpaceWidth(), canvas.getCoordinateSpaceHeight());
         for (IDynamicObject gameObject : gameObjects) {
-            gameObject.update();
+            gameObject.update(elapsedTime);
             gameObject.draw(canvas.getContext2d());
         }
+        ball.collideWithWalls(0, 0, canvas.getCoordinateSpaceWidth(), canvas.getCoordinateSpaceHeight());
+        ball.collideWithObject(platform, false);
+        drawBuffer(canvas.getContext2d());
     }
 
     private Platform createPlatform() {
