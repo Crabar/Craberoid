@@ -16,6 +16,10 @@
 
     <profiles>
         <profile>
+            <properties>
+                <java.util.prefs.userRoot>~/app-root/data/.java/.systemPrefs</java.util.prefs.userRoot>
+                <java.util.prefs.systemRoot>~/app-root/data/.java/.systemPrefs</java.util.prefs.systemRoot>
+            </properties>
             <!-- When built in OpenShift the 'openshift' profile will be used when
                 invoking mvn. -->
             <!-- Use this profile for any OpenShift specific customization your app
