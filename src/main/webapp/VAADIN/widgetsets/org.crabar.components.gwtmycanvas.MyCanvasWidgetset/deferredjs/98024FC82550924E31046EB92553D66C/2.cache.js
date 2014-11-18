@@ -1,1 +1,0 @@
-$wnd.org_crabar_components_gwtmycanvas_MyCanvasWidgetset.runAsyncCallback2('Vcb(1418,1,ard);_.Xc=function h4b(){UTb((!NTb&&(NTb=new ZTb),NTb),this.b.e)};Dld(ak)(2);\n//# sourceURL=org.crabar.components.gwtmycanvas.MyCanvasWidgetset-2.js\n')

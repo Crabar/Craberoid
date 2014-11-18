@@ -13,8 +13,8 @@ import java.awt.*;
 public class Ball implements IDynamicObject {
 
     ImageElement ballImage;
-    int centerX;
-    int centerY;
+    double centerX;
+    double centerY;
     int radius = 20;
     double velocity[] = {0, 0}; // px per sec
 
@@ -23,19 +23,19 @@ public class Ball implements IDynamicObject {
         ballImage = ImageElement.as(img.getElement());
     }
 
-    public int getCenterX() {
+    public double getCenterX() {
         return centerX;
     }
 
-    public void setCenterX(int centerX) {
+    public void setCenterX(double centerX) {
         this.centerX = centerX;
     }
 
-    public int getCenterY() {
+    public double getCenterY() {
         return centerY;
     }
 
-    public void setCenterY(int centerY) {
+    public void setCenterY(double centerY) {
         this.centerY = centerY;
     }
 
@@ -82,10 +82,10 @@ public class Ball implements IDynamicObject {
     }
 
     private Boolean isBallIntersectSide(int x1, int y1, int x2, int y2) {
-        int oX1 = x1 - getCenterX();
-        int oX2 = x2 - getCenterX();
-        int oY1 = y1 - getCenterY();
-        int oY2 = y2 - getCenterY();
+        int oX1 = x1 - (int) getCenterX();
+        int oX2 = x2 - (int) getCenterX();
+        int oY1 = y1 - (int) getCenterY();
+        int oY2 = y2 - (int) getCenterY();
 
         int dx = oX2 - oX1;
         int dy = oY2 - oY1;
@@ -107,7 +107,8 @@ public class Ball implements IDynamicObject {
 
     @Override
     public void draw(Context2d context2d) {
-        context2d.drawImage(ballImage, (getCenterX() - getRadius()), (getCenterY() - getRadius()), (getRadius() * 2), (getRadius() * 2));
+        context2d.fillRect((getCenterX() - getRadius()), (getCenterY() - getRadius()), (getRadius() * 2), (getRadius() * 2));
+//        context2d.drawImage(ballImage, (getCenterX() - getRadius()), (getCenterY() - getRadius()), (getRadius() * 2), (getRadius() * 2));
     }
 
     private Rectangle boundBox = new Rectangle();
@@ -115,8 +116,8 @@ public class Ball implements IDynamicObject {
     @Override
     public void update(double elapsedTime) {
         double velocityFactor = 1000 / elapsedTime;
-        centerX += Math.round(velocity[0] / velocityFactor);
-        centerY += Math.round(velocity[1] / velocityFactor);
+        centerX += velocity[0] / velocityFactor;
+        centerY += velocity[1] / velocityFactor;
     }
 
     public void setVelocity(int horizontalVelocity, int verticalVelocity) {
