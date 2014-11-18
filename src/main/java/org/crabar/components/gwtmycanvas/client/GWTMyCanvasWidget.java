@@ -85,7 +85,6 @@ public class GWTMyCanvasWidget extends Composite {
         canvas.setCoordinateSpaceHeight(height);
     }
 
-    private double elapsedTime = 0;
     private double previousFrameTimestamp = 0;
 
     private void initGameTimer() {
@@ -115,11 +114,13 @@ public class GWTMyCanvasWidget extends Composite {
         canvas.getContext2d().clearRect(0, 0, canvas.getCoordinateSpaceWidth(), canvas.getCoordinateSpaceHeight());
         for (IDynamicObject gameObject : gameObjects) {
             gameObject.update(elapsedTime);
+        }
+        for (IDynamicObject gameObject : gameObjects) {
             gameObject.draw(canvas.getContext2d());
         }
         ball.collideWithWalls(0, 0, canvas.getCoordinateSpaceWidth(), canvas.getCoordinateSpaceHeight());
         ball.collideWithObject(platform, false);
-        drawBuffer(canvas.getContext2d());
+//        drawBuffer(canvas.getContext2d());
     }
 
     private Platform createPlatform() {
