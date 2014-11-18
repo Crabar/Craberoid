@@ -11,5 +11,6 @@
 
     <inherits name="org.crabar.AppWidgetSet" />
 
+    <inherits name="com.google.gwt.logging.Logging"/>
     
 </module>

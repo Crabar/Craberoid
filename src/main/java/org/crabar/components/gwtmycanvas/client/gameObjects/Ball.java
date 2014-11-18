@@ -6,6 +6,8 @@ import com.google.gwt.user.client.ui.Image;
 import org.crabar.components.gwtmycanvas.client.resources.CraberoidClientBundle;
 
 import java.awt.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by ypoliakov on 12.11.2014.
@@ -13,8 +15,8 @@ import java.awt.*;
 public class Ball implements IDynamicObject {
 
     ImageElement ballImage;
-    double centerX;
-    double centerY;
+    int centerX;
+    int centerY;
     int radius = 20;
     double velocity[] = {0, 0}; // px per sec
 
@@ -23,19 +25,23 @@ public class Ball implements IDynamicObject {
         ballImage = ImageElement.as(img.getElement());
     }
 
-    public double getCenterX() {
+    public Logger getLogger() {
+        return Logger.getLogger("Ball.java");
+    }
+
+    public int getCenterX() {
         return centerX;
     }
 
-    public void setCenterX(double centerX) {
+    public void setCenterX(int centerX) {
         this.centerX = centerX;
     }
 
-    public double getCenterY() {
+    public int getCenterY() {
         return centerY;
     }
 
-    public void setCenterY(double centerY) {
+    public void setCenterY(int centerY) {
         this.centerY = centerY;
     }
 
@@ -107,8 +113,8 @@ public class Ball implements IDynamicObject {
 
     @Override
     public void draw(Context2d context2d) {
-        context2d.fillRect((getCenterX() - getRadius()), (getCenterY() - getRadius()), (getRadius() * 2), (getRadius() * 2));
-//        context2d.drawImage(ballImage, (getCenterX() - getRadius()), (getCenterY() - getRadius()), (getRadius() * 2), (getRadius() * 2));
+//        context2d.fillRect((getCenterX() - getRadius()), (getCenterY() - getRadius()), (getRadius() * 2), (getRadius() * 2));
+        context2d.drawImage(ballImage, (getCenterX() - getRadius()), (getCenterY() - getRadius()), (getRadius() * 2), (getRadius() * 2));
     }
 
     private Rectangle boundBox = new Rectangle();
@@ -116,8 +122,9 @@ public class Ball implements IDynamicObject {
     @Override
     public void update(double elapsedTime) {
         double velocityFactor = 1000 / elapsedTime;
-        centerX += velocity[0] / velocityFactor;
-        centerY += velocity[1] / velocityFactor;
+        centerX += Math.round(velocity[0] / velocityFactor);
+        centerY += Math.round(velocity[1] / velocityFactor);
+        getLogger().log(Level.SEVERE, "x: " + String.valueOf(centerX) + " y: " + String.valueOf(centerY) + " elapsed time:" + String.valueOf(elapsedTime));
     }
 
     public void setVelocity(int horizontalVelocity, int verticalVelocity) {

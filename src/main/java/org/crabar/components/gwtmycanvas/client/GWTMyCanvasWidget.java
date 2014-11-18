@@ -27,6 +27,7 @@ public class GWTMyCanvasWidget extends Composite {
     private Platform platform;
     private Ball ball;
     private ArrayList<IDynamicObject> gameObjects;
+    private boolean needDraw = true;
 
     public GWTMyCanvasWidget() {
         canvas = Canvas.createIfSupported();
@@ -66,6 +67,9 @@ public class GWTMyCanvasWidget extends Composite {
                 if (keyDownEvent.getNativeKeyCode() == KeyCodes.KEY_SPACE) {
                     ball.setVelocity(200, 200);
                 }
+                if (keyDownEvent.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
+                    needDraw = false;
+                }
             }
         });
     }
@@ -92,7 +96,9 @@ public class GWTMyCanvasWidget extends Composite {
             @Override
             public void execute(double timestamp) {
                 double elapsedTime = timestamp - previousFrameTimestamp;
-                drawCanvas(elapsedTime);
+                if (needDraw) {
+                    drawCanvas(elapsedTime);
+                }
                 drawFPS(canvas.getContext2d(), elapsedTime);
                 previousFrameTimestamp = timestamp;
                 AnimationScheduler.get().requestAnimationFrame(this);
