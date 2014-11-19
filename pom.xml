@@ -163,8 +163,7 @@
 				<artifactId>vaadin-maven-plugin</artifactId>
 				<version>${vaadin.plugin.version}</version>
 				<configuration>
-
-					<extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
+					<extraJvmArgs>-Xmx512M -Xss1024k -Djava.util.prefs.userRoot=~/app-root/data/.java/.systemPrefs -Djava.util.prefs.systemRoot=~/app-root/data/.java/.systemPrefs</extraJvmArgs>
 					<!-- <runTarget>mobilemail</runTarget> -->
 					<!-- We are doing "inplace" but into subdir VAADIN/widgetsets. This 
 						way compatible with Vaadin eclipse plugin. -->
