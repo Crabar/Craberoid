@@ -1,27 +1,477 @@
-function org_crabar_components_gwtmycanvas_MyCanvasWidgetset(){var O='bootstrap',P='begin',Q='gwt.codesvr.org.crabar.components.gwtmycanvas.MyCanvasWidgetset=',R='gwt.codesvr=',S='org.crabar.components.gwtmycanvas.MyCanvasWidgetset',T='startup',U='DUMMY',V=0,W='body',X='iframe',Y='javascript:""',Z='position:absolute; width:0; height:0; border:none; left: -1000px;',$=' top: -1000px;',_='CSS1Compat',ab='<!doctype html>',bb='',cb='<html><head><\/head><body><\/body><\/html>',db='undefined',eb=/loaded|complete/,fb='DOMContentLoaded',gb=50,hb='Chrome',ib='eval("',jb=1,kb='");',lb='script',mb='javascript',nb='moduleStartup',ob='moduleRequested',pb='head',qb='meta',rb='name',sb='org.crabar.components.gwtmycanvas.MyCanvasWidgetset::',tb='::',ub='gwt:property',vb='content',wb='=',xb='gwt:onPropertyErrorFn',yb='Bad handler "',zb='" for "gwt:onPropertyErrorFn"',Ab='gwt:onLoadErrorFn',Bb='" for "gwt:onLoadErrorFn"',Cb='#',Db='?',Eb='/',Fb=/^\w+:\/\//,Gb='img',Hb='clear.cache.gif',Ib='baseUrl',Jb='org.crabar.components.gwtmycanvas.MyCanvasWidgetset.nocache.js',Kb='base',Lb='//',Mb=/^\//,Nb=/^[a-zA-Z]+:\/\//,Ob='modernie',Pb='MSIE',Qb='Trident',Rb='yes',Sb='none',Tb='user.agent',Ub='opera',Vb='webkit',Wb='trident',Xb='safari',Yb='msie',Zb=10,$b='ie10',_b=9,ac='ie9',bc=8,cc='ie8',dc='gecko',ec='gecko1_8',fc='unknown',gc=2,hc=3,ic=4,jc=5,kc='selectingPermutation',lc='org.crabar.components.gwtmycanvas.MyCanvasWidgetset.devmode.js',mc='00BD10099F94FF0615E2DAA715A592DD',nc=':1',oc=':2',pc=':3',qc=':4',rc=':5',sc=':6',tc=':',uc='.cache.js',vc='loadExternalRefs',wc='end',xc='http:',yc='file:',zc='_gwt_dummy_',Ac='__gwtDevModeHook:org.crabar.components.gwtmycanvas.MyCanvasWidgetset',Bc=/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?\/.*$/,Cc='Ignoring non-whitelisted Dev Mode URL: ',Dc=':moduleBase';var o=window;var p=document;r(O,P);function q(){var a=o.location.search;return a.indexOf(Q)!=-1||a.indexOf(R)!=-1}
-function r(a,b){if(o.__gwtStatsEvent){o.__gwtStatsEvent({moduleName:S,sessionId:o.__gwtStatsSessionId,subSystem:T,evtGroup:a,millis:(new Date).getTime(),type:b})}}
-org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__sendStats=r;org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__moduleName=S;org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__errFn=null;org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__moduleBase=U;org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__softPermutationId=V;org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__computePropValue=null;org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__getPropMap=null;org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__gwtInstallCode=function(){};org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__gwtStartLoadingFragment=function(){return null};org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__gwt_isKnownPropertyValue=function(){return false};org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__gwt_getMetaProperty=function(){return null};__propertyErrorFunction=null;var s=o.__gwt_activeModules=o.__gwt_activeModules||{};s[S]={moduleName:S};var t;function u(){w();return t}
-function v(){w();return t.getElementsByTagName(W)[V]}
-function w(){if(t){return}var a=p.createElement(X);a.src=Y;a.id=S;a.style.cssText=Z+$;a.tabIndex=-1;p.body.appendChild(a);t=a.contentDocument;if(!t){t=a.contentWindow.document}t.open();var b=document.compatMode==_?ab:bb;t.write(b+cb);t.close()}
-function A(k){function l(a){function b(){if(typeof p.readyState==db){return typeof p.body!=db&&p.body!=null}return eb.test(p.readyState)}
-var c=b();if(c){a();return}function d(){if(!c){c=true;a();if(p.removeEventListener){p.removeEventListener(fb,d,false)}if(e){clearInterval(e)}}}
-if(p.addEventListener){p.addEventListener(fb,d,false)}var e=setInterval(function(){if(b()){d()}},gb)}
-function m(c){function d(a,b){a.removeChild(b)}
-var e=v();var f=u();var g;if(navigator.userAgent.indexOf(hb)>-1&&window.JSON){var h=f.createDocumentFragment();h.appendChild(f.createTextNode(ib));for(var i=V;i<c.length;i++){var j=window.JSON.stringify(c[i]);h.appendChild(f.createTextNode(j.substring(jb,j.length-jb)))}h.appendChild(f.createTextNode(kb));g=f.createElement(lb);g.language=mb;g.appendChild(h);e.appendChild(g);d(e,g)}else{for(var i=V;i<c.length;i++){g=f.createElement(lb);g.language=mb;g.text=c[i];e.appendChild(g);d(e,g)}}}
-org_crabar_components_gwtmycanvas_MyCanvasWidgetset.onScriptDownloaded=function(a){l(function(){m(a)})};r(nb,ob);var n=p.createElement(lb);n.src=k;p.getElementsByTagName(pb)[V].appendChild(n)}
-org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__startLoadingFragment=function(a){return D(a)};org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__installRunAsyncCode=function(a){var b=v();var c=u().createElement(lb);c.language=mb;c.text=a;b.appendChild(c);b.removeChild(c)};function B(){var c={};var d;var e;var f=p.getElementsByTagName(qb);for(var g=V,h=f.length;g<h;++g){var i=f[g],j=i.getAttribute(rb),k;if(j){j=j.replace(sb,bb);if(j.indexOf(tb)>=V){continue}if(j==ub){k=i.getAttribute(vb);if(k){var l,m=k.indexOf(wb);if(m>=V){j=k.substring(V,m);l=k.substring(m+jb)}else{j=k;l=bb}c[j]=l}}else if(j==xb){k=i.getAttribute(vb);if(k){try{d=eval(k)}catch(a){alert(yb+k+zb)}}}else if(j==Ab){k=i.getAttribute(vb);if(k){try{e=eval(k)}catch(a){alert(yb+k+Bb)}}}}}__gwt_getMetaProperty=function(a){var b=c[a];return b==null?null:b};__propertyErrorFunction=d;org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__errFn=e}
-function C(){function e(a){var b=a.lastIndexOf(Cb);if(b==-1){b=a.length}var c=a.indexOf(Db);if(c==-1){c=a.length}var d=a.lastIndexOf(Eb,Math.min(c,b));return d>=V?a.substring(V,d+jb):bb}
-function f(a){if(a.match(Fb)){}else{var b=p.createElement(Gb);b.src=a+Hb;a=e(b.src)}return a}
-function g(){var a=__gwt_getMetaProperty(Ib);if(a!=null){return a}return bb}
-function h(){var a=p.getElementsByTagName(lb);for(var b=V;b<a.length;++b){if(a[b].src.indexOf(Jb)!=-1){return e(a[b].src)}}return bb}
-function i(){var a=p.getElementsByTagName(Kb);if(a.length>V){return a[a.length-jb].href}return bb}
-function j(){var a=p.location;return a.href==a.protocol+Lb+a.host+a.pathname+a.search+a.hash}
-var k=g();if(k==bb){k=h()}if(k==bb){k=i()}if(k==bb&&j()){k=e(p.location.href)}k=f(k);return k}
-function D(a){if(a.match(Mb)){return a}if(a.match(Nb)){return a}return org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__moduleBase+a}
-function F(){var f=[];var g=V;function h(a,b){var c=f;for(var d=V,e=a.length-jb;d<e;++d){c=c[a[d]]||(c[a[d]]=[])}c[a[e]]=b}
-var i=[];var j=[];function k(a){var b=j[a](),c=i[a];if(b in c){return b}var d=[];for(var e in c){d[c[e]]=e}if(__propertyErrorFunc){__propertyErrorFunc(a,d,b)}throw null}
-j[Ob]=function(){{var a=o.navigator.userAgent;if(a.indexOf(Pb)==-1&&a.indexOf(Qb)!=-1){return Rb}return Sb}};i[Ob]={none:V,yes:jb};j[Tb]=function(){var a=navigator.userAgent.toLowerCase();if(function(){return a.indexOf(Ub)!=-1}())return Ub;if(function(){return a.indexOf(Vb)!=-1&&a.indexOf(Wb)==-1}())return Xb;if(function(){return a.indexOf(Yb)!=-1&&p.documentMode==Zb}())return $b;if(function(){return a.indexOf(Yb)!=-1&&p.documentMode>=_b}())return ac;if(function(){return a.indexOf(Yb)!=-1&&p.documentMode>=bc}())return cc;if(function(){return a.indexOf(dc)!=-1}())return ec;return fc};i[Tb]={gecko1_8:V,ie10:jb,ie8:gc,ie9:hc,opera:ic,safari:jc};__gwt_isKnownPropertyValue=function(a,b){return b in i[a]};org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__getPropMap=function(){var a={};for(var b in i){if(i.hasOwnProperty(b)){a[b]=k(b)}}return a};org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__computePropValue=k;o.__gwt_activeModules[S].bindings=org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__getPropMap;r(O,kc);if(q()){return D(lc)}var l;try{h([Sb,ec],mc);h([Rb,ec],mc+nc);h([Sb,$b],mc+oc);h([Sb,cc],mc+pc);h([Sb,ac],mc+qc);h([Sb,Ub],mc+rc);h([Sb,Xb],mc+sc);l=f[k(Ob)][k(Tb)];var m=l.indexOf(tc);if(m!=-1){g=parseInt(l.substring(m+jb),Zb);l=l.substring(V,m)}}catch(a){}org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__softPermutationId=g;return D(l+uc)}
-function G(){if(!o.__gwt_stylesLoaded){o.__gwt_stylesLoaded={}}r(vc,P);r(vc,wc)}
-B();org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__moduleBase=C();s[S].moduleBase=org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__moduleBase;var H=F();if(o){var I=!!(o.location.protocol==xc||o.location.protocol==yc);o.__gwt_activeModules[S].canRedirect=I;function J(){var b=zc;try{o.sessionStorage.setItem(b,b);o.sessionStorage.removeItem(b);return true}catch(a){return false}}
-if(I&&J()){var K=Ac;var L=o.sessionStorage[K];if(!Bc.test(L)){if(L&&(window.console&&console.log)){console.log(Cc+L)}L=bb}if(L&&!o[K]){o[K]=true;o[K+Dc]=C();var M=p.createElement(lb);M.src=L;var N=p.getElementsByTagName(pb)[V];N.insertBefore(M,N.firstElementChild||N.children[V]);return false}}}G();r(O,wc);A(H);return true}
-org_crabar_components_gwtmycanvas_MyCanvasWidgetset.succeeded=org_crabar_components_gwtmycanvas_MyCanvasWidgetset();
+function org_crabar_components_gwtmycanvas_MyCanvasWidgetset(){
+  var $wnd_0 = window;
+  var $doc_0 = document;
+  sendStats('bootstrap', 'begin');
+  function isHostedMode(){
+    var query = $wnd_0.location.search;
+    return query.indexOf('gwt.codesvr.org.crabar.components.gwtmycanvas.MyCanvasWidgetset=') != -1 || query.indexOf('gwt.codesvr=') != -1;
+  }
+
+  function sendStats(evtGroupString, typeString){
+    if ($wnd_0.__gwtStatsEvent) {
+      $wnd_0.__gwtStatsEvent({moduleName:'org.crabar.components.gwtmycanvas.MyCanvasWidgetset', sessionId:$wnd_0.__gwtStatsSessionId, subSystem:'startup', evtGroup:evtGroupString, millis:(new Date).getTime(), type:typeString});
+    }
+  }
+
+  org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__sendStats = sendStats;
+  org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__moduleName = 'org.crabar.components.gwtmycanvas.MyCanvasWidgetset';
+  org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__errFn = null;
+  org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__moduleBase = 'DUMMY';
+  org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__softPermutationId = 0;
+  org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__computePropValue = null;
+  org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__getPropMap = null;
+  org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__gwtInstallCode = function(){
+  }
+  ;
+  org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__gwtStartLoadingFragment = function(){
+    return null;
+  }
+  ;
+  org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__gwt_isKnownPropertyValue = function(){
+    return false;
+  }
+  ;
+  org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__gwt_getMetaProperty = function(){
+    return null;
+  }
+  ;
+  __propertyErrorFunction = null;
+  var activeModules = $wnd_0.__gwt_activeModules = $wnd_0.__gwt_activeModules || {};
+  activeModules['org.crabar.components.gwtmycanvas.MyCanvasWidgetset'] = {moduleName:'org.crabar.components.gwtmycanvas.MyCanvasWidgetset'};
+  var frameDoc;
+  function getInstallLocationDoc(){
+    setupInstallLocation();
+    return frameDoc;
+  }
+
+  function getInstallLocation(){
+    setupInstallLocation();
+    return frameDoc.getElementsByTagName('body')[0];
+  }
+
+  function setupInstallLocation(){
+    if (frameDoc) {
+      return;
+    }
+    var scriptFrame = $doc_0.createElement('iframe');
+    scriptFrame.src = 'javascript:""';
+    scriptFrame.id = 'org.crabar.components.gwtmycanvas.MyCanvasWidgetset';
+    scriptFrame.style.cssText = 'position:absolute; width:0; height:0; border:none; left: -1000px;' + ' top: -1000px;';
+    scriptFrame.tabIndex = -1;
+    $doc_0.body.appendChild(scriptFrame);
+    frameDoc = scriptFrame.contentDocument;
+    if (!frameDoc) {
+      frameDoc = scriptFrame.contentWindow.document;
+    }
+    frameDoc.open();
+    var doctype = document.compatMode == 'CSS1Compat'?'<!doctype html>':'';
+    frameDoc.write(doctype + '<html><head><\/head><body><\/body><\/html>');
+    frameDoc.close();
+  }
+
+  function installScript(filename){
+    function setupWaitForBodyLoad(callback){
+      function isBodyLoaded(){
+        if (typeof $doc_0.readyState == 'undefined') {
+          return typeof $doc_0.body != 'undefined' && $doc_0.body != null;
+        }
+        return /loaded|complete/.test($doc_0.readyState);
+      }
+
+      var bodyDone = isBodyLoaded();
+      if (bodyDone) {
+        callback();
+        return;
+      }
+      function onBodyDone(){
+        if (!bodyDone) {
+          bodyDone = true;
+          callback();
+          if ($doc_0.removeEventListener) {
+            $doc_0.removeEventListener('DOMContentLoaded', onBodyDone, false);
+          }
+          if (onBodyDoneTimerId) {
+            clearInterval(onBodyDoneTimerId);
+          }
+        }
+      }
+
+      if ($doc_0.addEventListener) {
+        $doc_0.addEventListener('DOMContentLoaded', onBodyDone, false);
+      }
+      var onBodyDoneTimerId = setInterval(function(){
+        if (isBodyLoaded()) {
+          onBodyDone();
+        }
+      }
+      , 50);
+    }
+
+    function installCode(code_0){
+      function removeScript(body_0, element){
+      }
+
+      var docbody = getInstallLocation();
+      var doc = getInstallLocationDoc();
+      var script;
+      if (navigator.userAgent.indexOf('Chrome') > -1 && window.JSON) {
+        var scriptFrag = doc.createDocumentFragment();
+        scriptFrag.appendChild(doc.createTextNode('eval("'));
+        for (var i = 0; i < code_0.length; i++) {
+          var c = window.JSON.stringify(code_0[i]);
+          scriptFrag.appendChild(doc.createTextNode(c.substring(1, c.length - 1)));
+        }
+        scriptFrag.appendChild(doc.createTextNode('");'));
+        script = doc.createElement('script');
+        script.language = 'javascript';
+        script.appendChild(scriptFrag);
+        docbody.appendChild(script);
+        removeScript(docbody, script);
+      }
+       else {
+        for (var i = 0; i < code_0.length; i++) {
+          script = doc.createElement('script');
+          script.language = 'javascript';
+          script.text = code_0[i];
+          docbody.appendChild(script);
+          removeScript(docbody, script);
+        }
+      }
+    }
+
+    org_crabar_components_gwtmycanvas_MyCanvasWidgetset.onScriptDownloaded = function(code_0){
+      setupWaitForBodyLoad(function(){
+        installCode(code_0);
+      }
+      );
+    }
+    ;
+    sendStats('moduleStartup', 'moduleRequested');
+    var script_0 = $doc_0.createElement('script');
+    script_0.src = filename;
+    $doc_0.getElementsByTagName('head')[0].appendChild(script_0);
+  }
+
+  org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__startLoadingFragment = function(fragmentFile){
+    return computeUrlForResource(fragmentFile);
+  }
+  ;
+  org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__installRunAsyncCode = function(code_0){
+    var docbody = getInstallLocation();
+    var script = getInstallLocationDoc().createElement('script');
+    script.language = 'javascript';
+    script.text = code_0;
+    docbody.appendChild(script);
+  }
+  ;
+  function processMetas(){
+    var metaProps = {};
+    var propertyErrorFunc;
+    var onLoadErrorFunc;
+    var metas = $doc_0.getElementsByTagName('meta');
+    for (var i = 0, n = metas.length; i < n; ++i) {
+      var meta = metas[i], name_1 = meta.getAttribute('name'), content_0;
+      if (name_1) {
+        name_1 = name_1.replace('org.crabar.components.gwtmycanvas.MyCanvasWidgetset::', '');
+        if (name_1.indexOf('::') >= 0) {
+          continue;
+        }
+        if (name_1 == 'gwt:property') {
+          content_0 = meta.getAttribute('content');
+          if (content_0) {
+            var value_1, eq = content_0.indexOf('=');
+            if (eq >= 0) {
+              name_1 = content_0.substring(0, eq);
+              value_1 = content_0.substring(eq + 1);
+            }
+             else {
+              name_1 = content_0;
+              value_1 = '';
+            }
+            metaProps[name_1] = value_1;
+          }
+        }
+         else if (name_1 == 'gwt:onPropertyErrorFn') {
+          content_0 = meta.getAttribute('content');
+          if (content_0) {
+            try {
+              propertyErrorFunc = eval(content_0);
+            }
+             catch (e) {
+              alert('Bad handler "' + content_0 + '" for "gwt:onPropertyErrorFn"');
+            }
+          }
+        }
+         else if (name_1 == 'gwt:onLoadErrorFn') {
+          content_0 = meta.getAttribute('content');
+          if (content_0) {
+            try {
+              onLoadErrorFunc = eval(content_0);
+            }
+             catch (e) {
+              alert('Bad handler "' + content_0 + '" for "gwt:onLoadErrorFn"');
+            }
+          }
+        }
+      }
+    }
+    __gwt_getMetaProperty = function(name_0){
+      var value_0 = metaProps[name_0];
+      return value_0 == null?null:value_0;
+    }
+    ;
+    __propertyErrorFunction = propertyErrorFunc;
+    org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__errFn = onLoadErrorFunc;
+  }
+
+  function computeScriptBase(){
+    function getDirectoryOfFile(path){
+      var hashIndex = path.lastIndexOf('#');
+      if (hashIndex == -1) {
+        hashIndex = path.length;
+      }
+      var queryIndex = path.indexOf('?');
+      if (queryIndex == -1) {
+        queryIndex = path.length;
+      }
+      var slashIndex = path.lastIndexOf('/', Math.min(queryIndex, hashIndex));
+      return slashIndex >= 0?path.substring(0, slashIndex + 1):'';
+    }
+
+    function ensureAbsoluteUrl(url_0){
+      if (url_0.match(/^\w+:\/\//)) {
+      }
+       else {
+        var img = $doc_0.createElement('img');
+        img.src = url_0 + 'clear.cache.gif';
+        url_0 = getDirectoryOfFile(img.src);
+      }
+      return url_0;
+    }
+
+    function tryMetaTag(){
+      var metaVal = __gwt_getMetaProperty('baseUrl');
+      if (metaVal != null) {
+        return metaVal;
+      }
+      return '';
+    }
+
+    function tryNocacheJsTag(){
+      var scriptTags = $doc_0.getElementsByTagName('script');
+      for (var i = 0; i < scriptTags.length; ++i) {
+        if (scriptTags[i].src.indexOf('org.crabar.components.gwtmycanvas.MyCanvasWidgetset.nocache.js') != -1) {
+          return getDirectoryOfFile(scriptTags[i].src);
+        }
+      }
+      return '';
+    }
+
+    function tryBaseTag(){
+      var baseElements = $doc_0.getElementsByTagName('base');
+      if (baseElements.length > 0) {
+        return baseElements[baseElements.length - 1].href;
+      }
+      return '';
+    }
+
+    function isLocationOk(){
+      var loc = $doc_0.location;
+      return loc.href == loc.protocol + '//' + loc.host + loc.pathname + loc.search + loc.hash;
+    }
+
+    var tempBase = tryMetaTag();
+    if (tempBase == '') {
+      tempBase = tryNocacheJsTag();
+    }
+    if (tempBase == '') {
+      tempBase = tryBaseTag();
+    }
+    if (tempBase == '' && isLocationOk()) {
+      tempBase = getDirectoryOfFile($doc_0.location.href);
+    }
+    tempBase = ensureAbsoluteUrl(tempBase);
+    return tempBase;
+  }
+
+  function computeUrlForResource(resource){
+    if (resource.match(/^\//)) {
+      return resource;
+    }
+    if (resource.match(/^[a-zA-Z]+:\/\//)) {
+      return resource;
+    }
+    return org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__moduleBase + resource;
+  }
+
+  function getCompiledCodeFilename(){
+    var answers = [];
+    var softPermutationId = 0;
+    function unflattenKeylistIntoAnswers(propValArray, value_0){
+      var answer = answers;
+      for (var i = 0, n = propValArray.length - 1; i < n; ++i) {
+        answer = answer[propValArray[i]] || (answer[propValArray[i]] = []);
+      }
+      answer[propValArray[n]] = value_0;
+    }
+
+    var values = [];
+    var providers = [];
+    function computePropValue(propName){
+      var value_0 = providers[propName](), allowedValuesMap = values[propName];
+      if (value_0 in allowedValuesMap) {
+        return value_0;
+      }
+      var allowedValuesList = [];
+      for (var k in allowedValuesMap) {
+        allowedValuesList[allowedValuesMap[k]] = k;
+      }
+      if (__propertyErrorFunc) {
+        __propertyErrorFunc(propName, allowedValuesList, value_0);
+      }
+      throw null;
+    }
+
+    providers['modernie'] = function(){
+      {
+        var ua = $wnd_0.navigator.userAgent;
+        if (ua.indexOf('MSIE') == -1 && ua.indexOf('Trident') != -1) {
+          return 'yes';
+        }
+        return 'none';
+      }
+    }
+    ;
+    values['modernie'] = {none:0, yes:1};
+    providers['user.agent'] = function(){
+      var ua = navigator.userAgent.toLowerCase();
+      if (function(){
+        return ua.indexOf('opera') != -1;
+      }
+      ())
+        return 'opera';
+      if (function(){
+        return ua.indexOf('webkit') != -1 && ua.indexOf('trident') == -1;
+      }
+      ())
+        return 'safari';
+      if (function(){
+        return ua.indexOf('msie') != -1 && $doc_0.documentMode == 10;
+      }
+      ())
+        return 'ie10';
+      if (function(){
+        return ua.indexOf('msie') != -1 && $doc_0.documentMode >= 9;
+      }
+      ())
+        return 'ie9';
+      if (function(){
+        return ua.indexOf('msie') != -1 && $doc_0.documentMode >= 8;
+      }
+      ())
+        return 'ie8';
+      if (function(){
+        return ua.indexOf('gecko') != -1;
+      }
+      ())
+        return 'gecko1_8';
+      return 'unknown';
+    }
+    ;
+    values['user.agent'] = {gecko1_8:0, ie10:1, ie8:2, ie9:3, opera:4, safari:5};
+    __gwt_isKnownPropertyValue = function(propName, propValue){
+      return propValue in values[propName];
+    }
+    ;
+    org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__getPropMap = function(){
+      var result = {};
+      for (var key in values) {
+        if (values.hasOwnProperty(key)) {
+          result[key] = computePropValue(key);
+        }
+      }
+      return result;
+    }
+    ;
+    org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__computePropValue = computePropValue;
+    $wnd_0.__gwt_activeModules['org.crabar.components.gwtmycanvas.MyCanvasWidgetset'].bindings = org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__getPropMap;
+    sendStats('bootstrap', 'selectingPermutation');
+    if (isHostedMode()) {
+      return computeUrlForResource('org.crabar.components.gwtmycanvas.MyCanvasWidgetset.devmode.js');
+    }
+    var strongName;
+    try {
+      unflattenKeylistIntoAnswers(['none', 'gecko1_8'], 'DF78745421C14AF7EE2E2AE3A0D3F080');
+      unflattenKeylistIntoAnswers(['yes', 'gecko1_8'], 'DF78745421C14AF7EE2E2AE3A0D3F080' + ':1');
+      unflattenKeylistIntoAnswers(['none', 'ie10'], 'DF78745421C14AF7EE2E2AE3A0D3F080' + ':2');
+      unflattenKeylistIntoAnswers(['none', 'ie8'], 'DF78745421C14AF7EE2E2AE3A0D3F080' + ':3');
+      unflattenKeylistIntoAnswers(['none', 'ie9'], 'DF78745421C14AF7EE2E2AE3A0D3F080' + ':4');
+      unflattenKeylistIntoAnswers(['none', 'opera'], 'DF78745421C14AF7EE2E2AE3A0D3F080' + ':5');
+      unflattenKeylistIntoAnswers(['none', 'safari'], 'DF78745421C14AF7EE2E2AE3A0D3F080' + ':6');
+      strongName = answers[computePropValue('modernie')][computePropValue('user.agent')];
+      var idx = strongName.indexOf(':');
+      if (idx != -1) {
+        softPermutationId = parseInt(strongName.substring(idx + 1), 10);
+        strongName = strongName.substring(0, idx);
+      }
+    }
+     catch (e) {
+    }
+    org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__softPermutationId = softPermutationId;
+    return computeUrlForResource(strongName + '.cache.js');
+  }
+
+  function loadExternalStylesheets(){
+    if (!$wnd_0.__gwt_stylesLoaded) {
+      $wnd_0.__gwt_stylesLoaded = {};
+    }
+    sendStats('loadExternalRefs', 'begin');
+    sendStats('loadExternalRefs', 'end');
+  }
+
+  processMetas();
+  org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__moduleBase = computeScriptBase();
+  activeModules['org.crabar.components.gwtmycanvas.MyCanvasWidgetset'].moduleBase = org_crabar_components_gwtmycanvas_MyCanvasWidgetset.__moduleBase;
+  var filename_0 = getCompiledCodeFilename();
+  if ($wnd_0) {
+    var devModePermitted = !!($wnd_0.location.protocol == 'http:' || $wnd_0.location.protocol == 'file:');
+    $wnd_0.__gwt_activeModules['org.crabar.components.gwtmycanvas.MyCanvasWidgetset'].canRedirect = devModePermitted;
+    function supportsSessionStorage(){
+      var key = '_gwt_dummy_';
+      try {
+        $wnd_0.sessionStorage.setItem(key, key);
+        $wnd_0.sessionStorage.removeItem(key);
+        return true;
+      }
+       catch (e) {
+        return false;
+      }
+    }
+
+    if (devModePermitted && supportsSessionStorage()) {
+      var devModeKey = '__gwtDevModeHook:org.crabar.components.gwtmycanvas.MyCanvasWidgetset';
+      var devModeUrl = $wnd_0.sessionStorage[devModeKey];
+      if (!/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?\/.*$/.test(devModeUrl)) {
+        if (devModeUrl && (window.console && console.log)) {
+          console.log('Ignoring non-whitelisted Dev Mode URL: ' + devModeUrl);
+        }
+        devModeUrl = '';
+      }
+      if (devModeUrl && !$wnd_0[devModeKey]) {
+        $wnd_0[devModeKey] = true;
+        $wnd_0[devModeKey + ':moduleBase'] = computeScriptBase();
+        var devModeScript = $doc_0.createElement('script');
+        devModeScript.src = devModeUrl;
+        var head = $doc_0.getElementsByTagName('head')[0];
+        head.insertBefore(devModeScript, head.firstElementChild || head.children[0]);
+        return false;
+      }
+    }
+  }
+  loadExternalStylesheets();
+  sendStats('bootstrap', 'end');
+  installScript(filename_0);
+  return true;
+}
+
+org_crabar_components_gwtmycanvas_MyCanvasWidgetset.succeeded = org_crabar_components_gwtmycanvas_MyCanvasWidgetset();
